@@ -23,6 +23,11 @@
             <input type="text" name="statusInput" id="statusInput"/>
             <input type="button" id="statusButton" name="statusButton" value="Change Status"/>
             <script src="js/status.js" type="text/javascript"></script>
+
+            <p>Add Friend</p>
+            <input type="text" name="friendNameInput" id="friendNameInput"/>
+            <input type="button" name="addFriendButton" id="addFriendButton" value="Add Friend"/>
+            <script src="js/addFriend.js" type="text/javascript"></script>
         </main>
         <jsp:include page="footer.jsp">
             <jsp:param name="title" value="Chat"/>
