@@ -51,7 +51,8 @@ public class Controller extends HttpServlet {
         	}
         }
         if(handler instanceof AsyncRequestHandler){
-        	response.setContentType("text/json");
+        	response.setContentType("application/json");
+			System.out.println(destination);
         	response.getWriter().write(destination);
 		}else {
 			RequestDispatcher view = request.getRequestDispatcher(destination);

@@ -16,7 +16,7 @@
         </jsp:include>
         <main>
             <div id="statusDiv">
-                <p style="float: right" id="status">${user.getStatus()}</p>
+                <p style="float: right" id="status"></p>
             </div>
             <div style="height: 100px;"></div>
             <p>Change status</p>
