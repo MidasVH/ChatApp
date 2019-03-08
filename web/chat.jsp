@@ -18,7 +18,24 @@
             <div id="statusDiv">
                 <p style="float: right" id="status"></p>
             </div>
-            <div style="height: 100px;"></div>
+            <div>
+                <h3>Friends</h3>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>bib</td>
+                        <td>statusbib</td>
+                    </tr>
+                    <tr>
+                        <td>an</td>
+                        <td>statusAn</td>
+                    </tr>
+                </table>
+
+            </div>
             <p>Change status</p>
             <input type="text" name="statusInput" id="statusInput"/>
             <input type="button" id="statusButton" name="statusButton" value="Change Status"/>

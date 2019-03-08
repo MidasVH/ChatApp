@@ -23,7 +23,6 @@ function getNewStatus() {
 function getData() {
     if(getStatusRequest.status == 200){
         if(getStatusRequest.readyState == 4){
-            console.log(getStatusRequest.responseText);
             document.getElementById("status").innerText = getStatusRequest.responseText;
         }
     }
