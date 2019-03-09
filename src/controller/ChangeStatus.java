@@ -1,5 +1,6 @@
 package controller;
 
+import domain.DomainException;
 import domain.Person;
 
 import javax.servlet.ServletException;
@@ -13,9 +14,12 @@ public class ChangeStatus extends AsyncRequestHandler{
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String status = request.getParameter("status");
         Person p = (Person)request.getSession().getAttribute("user");
-        if(status != null)
+        try{
             p.setStatus(status);
-        return toJSON(status);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
 

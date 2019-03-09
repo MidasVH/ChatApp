@@ -10,7 +10,7 @@
     <jsp:include page="head.jsp">
         <jsp:param name="title" value="Chat"/>
     </jsp:include>
-    <body onload="getNewStatus();">
+    <body onload="getNewStatus(); getFriends();">
         <jsp:include page="header.jsp">
             <jsp:param name="title" value="Chat" />
         </jsp:include>
@@ -21,18 +21,13 @@
             <div>
                 <h3>Friends</h3>
                 <table>
-                    <tr>
+                    <thead>
                         <th>Name</th>
                         <th>Status</th>
-                    </tr>
-                    <tr>
-                        <td>bib</td>
-                        <td>statusbib</td>
-                    </tr>
-                    <tr>
-                        <td>an</td>
-                        <td>statusAn</td>
-                    </tr>
+                    </thead>
+                    <tbody id="friendsList">
+
+                    </tbody>
                 </table>
 
             </div>
@@ -41,10 +36,11 @@
             <input type="button" id="statusButton" name="statusButton" value="Change Status"/>
             <script src="js/status.js" type="text/javascript"></script>
 
-            <p>Add Friend</p>
+            <p>Add Friend (using userid)</p>
             <input type="text" name="friendNameInput" id="friendNameInput"/>
             <input type="button" name="addFriendButton" id="addFriendButton" value="Add Friend"/>
             <script src="js/addFriend.js" type="text/javascript"></script>
+            <script src="js/getFriends.js" type="text/javascript"></script>
         </main>
         <jsp:include page="footer.jsp">
             <jsp:param name="title" value="Chat"/>

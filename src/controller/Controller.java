@@ -50,13 +50,12 @@ public class Controller extends HttpServlet {
         		destination="index.jsp";
         	}
         }
+		response.setContentType("application/json");
         if(handler instanceof AsyncRequestHandler){
-        	response.setContentType("application/json");
-			System.out.println(destination);
-        	response.getWriter().write(destination);
-		}else {
-			RequestDispatcher view = request.getRequestDispatcher(destination);
-			view.forward(request, response);
+        	return;
 		}
+		RequestDispatcher view = request.getRequestDispatcher(destination);
+		view.forward(request, response);
+
 	}
 }

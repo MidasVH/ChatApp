@@ -13,6 +13,7 @@ public class getStatus extends AsyncRequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Person p = (Person)request.getSession().getAttribute("user");
         String status = p.getStatus();
-        return status;
+        response.getWriter().write(status);
+        return null;
     }
 }
