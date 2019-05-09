@@ -12,10 +12,17 @@ function showData(){
             var serverResponse = JSON.parse(getFriendRequest.responseText);
             var html = "";
             for(var i = 0; i < serverResponse.length; i++){
-                html = html + "<tr><td>" + serverResponse[i].userId + "</td><td>" + serverResponse[i].status + "</td></tr>";
+                html = html + "<tr><td id=" + serverResponse[i].userId + ">" + serverResponse[i].userId + "</td><td>" + serverResponse[i].status + "</td></tr>";
             }
             document.getElementById("friendsList").innerHTML = html;
             setTimeout(getFriends, 2000);
         }
     }
 }
+
+document.getElementById("friendsList").addEventListener("click", function(e){
+    console.log(e.target.nodeName);
+    if(e.target.nodeName == "TD" && e.target){
+        showChat(e.target.id);
+    }
+});

@@ -8,6 +8,7 @@ import db.PersonRepositoryStub;
 
 public class PersonService {
 	private PersonRepository personRepository = new PersonRepositoryStub();
+	public ArrayList<Conversation> conversations = new ArrayList<>();
 
 	public PersonService(){
 	}

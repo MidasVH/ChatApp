@@ -30,6 +30,13 @@
                     </tbody>
                 </table>
 
+
+
+                <div id="chat" style="bottom: 0; right: 200px; position: absolute; width: auto;  height: 300px; overflow: auto ">
+
+                </div>
+
+
             </div>
             <p>Change status</p>
             <input type="text" name="statusInput" id="statusInput"/>
@@ -41,6 +48,7 @@
             <input type="button" name="addFriendButton" id="addFriendButton" value="Add Friend"/>
             <script src="js/addFriend.js" type="text/javascript"></script>
             <script src="js/getFriends.js" type="text/javascript"></script>
+            <script src="js/chat.js" type="text/javascript"></script>
         </main>
         <jsp:include page="footer.jsp">
             <jsp:param name="title" value="Chat"/>

@@ -1,7 +1,7 @@
 var webSocket;
 
 function openSocket(){
-    webSocket = new WebSocket("ws://localhost:8080/Blog");
+    webSocket = new WebSocket("ws://localhost:8081/web_war_exploded/Blog");
     webSocket.onopen = function(event){};
 
     webSocket.onmessage = function(event){

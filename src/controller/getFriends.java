@@ -17,7 +17,6 @@ public class getFriends extends AsyncRequestHandler {
         if(user != null){
             List<Person> friends = new ArrayList<>(user.getFriends());
             for(Person p : friends){
-                System.out.println(p.getUserId());
                 if(p.getStatus() == null){
                     p.setStatus("offline");
                 }
