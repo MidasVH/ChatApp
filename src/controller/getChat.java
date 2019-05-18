@@ -11,6 +11,7 @@ import java.io.IOException;
 public class getChat extends AsyncRequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Controller.setAllowSendJson();
         Person user = (Person) request.getSession().getAttribute("user");
         if(user != null){
             String userid = request.getParameter("userId");
@@ -29,11 +30,12 @@ public class getChat extends AsyncRequestHandler {
                     this.getPersonService().conversations.add(found);
                 }
 
-                String result = this.ListToJSON(found.messages);
-                response.setContentType("application/json");
-                response.getWriter().write(result);
+
             }
+            response.setContentType("application/json");
+            return ListToJSON(found.messages);
         }
         return "";
     }
+
 }

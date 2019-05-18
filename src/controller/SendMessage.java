@@ -35,10 +35,11 @@ public class SendMessage extends AsyncRequestHandler {
 
                 if(!request.getParameter("message").isEmpty()){
                     found.messages.add(user.getUserId()+": " + request.getParameter("message"));
-                    System.out.println(user.getUserId()+": " + request.getParameter("message"));
+
                 }
             }
         }
+        response.setContentType("application/json");
         return null;
     }
 }

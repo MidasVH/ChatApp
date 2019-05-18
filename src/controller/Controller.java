@@ -21,6 +21,7 @@ public class Controller extends HttpServlet {
 	
 	private PersonService model = new PersonService();
 	private ControllerFactory controllerFactory = new ControllerFactory();
+	public static boolean sendJson;
 
 	public Controller() {
 		super();
@@ -35,11 +36,11 @@ public class Controller extends HttpServlet {
 	}
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("Access-Control-Allow-Origin", "*");
 		String action = request.getParameter("action");
         String destination = "index.jsp";
 		RequestHandler handler = null;
         if (action != null) {
+        	Controller.setAllowSendHtml();
         	try {
         		handler = controllerFactory.getController(action, model);
 				destination = handler.handleRequest(request, response);
@@ -51,12 +52,28 @@ public class Controller extends HttpServlet {
         		destination="index.jsp";
         	}
         }
-		response.setContentType("application/json");
+
+
         if(handler instanceof AsyncRequestHandler){
-        	return;
+
 		}
-		RequestDispatcher view = request.getRequestDispatcher(destination);
-		view.forward(request, response);
+		if(!sendJson){
+			RequestDispatcher view = request.getRequestDispatcher(destination);
+			view.forward(request, response);
+		}
+		if(sendJson){
+			response.getWriter().write(destination);
+			sendJson = false;
+		}
 
 	}
+
+	public static void setAllowSendJson(){
+		sendJson = true;
+	}
+
+	public static void setAllowSendHtml(){
+		sendJson = false;
+	}
 }
+

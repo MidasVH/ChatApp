@@ -17,13 +17,16 @@ function changeStatus(){
 function getNewStatus() {
     getStatusRequest.open("GET","Controller?action=getStatus", true);
     getStatusRequest.onreadystatechange = getData;
-    getStatusRequest.send();
+    getStatusRequest.send(null);
 }
 
 function getData() {
     if(getStatusRequest.status == 200){
         if(getStatusRequest.readyState == 4){
-            document.getElementById("status").innerText = getStatusRequest.responseText;
+            console.log(getStatusRequest.responseText);
+            var statusResponse = JSON.parse(getStatusRequest.responseText);
+            var status = statusResponse.status;
+            document.getElementById("status").innerText = status ;
         }
     }
 }
