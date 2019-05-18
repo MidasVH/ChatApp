@@ -14,12 +14,16 @@ public class ChangeStatus extends AsyncRequestHandler{
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String status = request.getParameter("status");
         Person p = (Person)request.getSession().getAttribute("user");
-        try{
-            p.setStatus(status);
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
+        if(p != null ){
+            getPersonService().getPerson(p.getUserId()).setStatus(status);
+            Controller.setAllowSendJson();
+            return toJSON(p.getStatus());
+        }else{
+            getPersonService().getPerson(request.getParameter("userId")).setStatus(request.getParameter("status"));
+            return toJSON(p.getStatus());
         }
-        return null;
     }
 
 
