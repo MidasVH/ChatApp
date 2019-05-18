@@ -35,7 +35,8 @@ public class Controller extends HttpServlet {
 	}
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
+        response.setHeader("Access-Control-Allow-Origin", "*");
+		String action = request.getParameter("action");
         String destination = "index.jsp";
 		RequestHandler handler = null;
         if (action != null) {

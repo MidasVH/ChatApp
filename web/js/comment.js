@@ -36,4 +36,6 @@ function writeResponse(text){
     }
 }
 
+
+
 openSocket();

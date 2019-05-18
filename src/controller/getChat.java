@@ -34,6 +34,6 @@ public class getChat extends AsyncRequestHandler {
                 response.getWriter().write(result);
             }
         }
-        return null;
+        return "";
     }
 }

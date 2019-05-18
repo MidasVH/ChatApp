@@ -47,53 +47,62 @@
             </form>
         </c:otherwise>
     </c:choose>
+    <script>
+        $(document).ready(function(){
+            $("#show").click(function() {
+                $("#topics").toggle("slide");
+            });
+        });
+    </script>
     <div style="height: 100px"></div>
+    <p id="show">Click to show / hide topics</p>
+    <div id="topics">
+        <div class="topic-1">
+            <h3>Hoe was de projectweek?</h3>
+            <ul id="topic-1-comments">
+            </ul>
+            <input id="topic-1-name" type="text" placeholder="Name" style="width: 100px">
+            <input id="topic-1-post" type="text" placeholder="Text">
+            <input id="topic-1-rating" type="number" placeholder="Rating" style="width: 50px;">
+            <input type="button" id="topic-1-button" onclick="post(1)" value="Post">
+        </div>
+        <div class="topic-2">
+            <h3>Wat ben je van plan te doen vandaag?</h3>
+            <ul id="topic-2-comments">
 
-    <div class="topic-1">
-        <h3>Hoe was de projectweek?</h3>
-        <ul id="topic-1-comments">
-        </ul>
-        <input id="topic-1-name" type="text" placeholder="Name" style="width: 100px">
-        <input id="topic-1-post" type="text" placeholder="Text">
-        <input id="topic-1-rating" type="number" placeholder="Rating" style="width: 50px;">
-        <input type="button" id="topic-1-button" onclick="post(1)" value="Post">
-    </div>
-    <div class="topic-2">
-        <h3>Wat ben je van plan te doen vandaag?</h3>
-        <ul id="topic-2-comments">
-
-        </ul>
-        <input id="topic-2-name" type="text" placeholder="Name" style="width: 100px">
-        <input id="topic-2-post" type="text" placeholder="Text">
-        <input id="topic-2-rating" type="number" placeholder="Rating" style="width: 50px;">
-        <input type="button" id="topic-2-button" onclick="post(2)" value="Post">
-    </div>
-    <div class="topic-3">
-        <h3>Hoe was de projectweek?</h3>
-        <ul id="topic-3-comments">
-        </ul>
-        <input id="topic-3-name" type="text" placeholder="Name" style="width: 100px">
-        <input id="topic-3-post" type="text" placeholder="Text">
-        <input id="topic-3-rating" type="number" placeholder="Rating" style="width: 50px;">
-        <input type="button" id="topic-3-button" onclick="post(3)" value="Post">
-    </div>
-    <div class="topic-4">
-        <h3>Hoe was de projectweek?</h3>
-        <ul id="topic-4-comments">
-        </ul>
-        <input id="topic-4-name" type="text" placeholder="Name" style="width: 100px">
-        <input id="topic-4-post" type="text" placeholder="Text">
-        <input id="topic-4-rating" type="number" placeholder="Rating" style="width: 50px;">
-        <input type="button" id="topic-4-button" onclick="post(4)" value="Post">
-    </div>
-    <div class="topic-5">
-        <h3>Hoe was de projectweek?</h3>
-        <ul id="topic-5-comments">
-        </ul>
-        <input id="topic-5-name" type="text" placeholder="Name" style="width: 100px">
-        <input id="topic-5-post" type="text" placeholder="Text">
-        <input id="topic-5-rating" type="number" placeholder="Rating" style="width: 50px;">
-        <input type="button" id="topic-5-button" onclick="post(5)" value="Post">
+            </ul>
+            <input id="topic-2-name" type="text" placeholder="Name" style="width: 100px">
+            <input id="topic-2-post" type="text" placeholder="Text">
+            <input id="topic-2-rating" type="number" placeholder="Rating" style="width: 50px;">
+            <input type="button" id="topic-2-button" onclick="post(2)" value="Post">
+        </div>
+        <div class="topic-3">
+            <h3>Hoe was de projectweek?</h3>
+            <ul id="topic-3-comments">
+            </ul>
+            <input id="topic-3-name" type="text" placeholder="Name" style="width: 100px">
+            <input id="topic-3-post" type="text" placeholder="Text">
+            <input id="topic-3-rating" type="number" placeholder="Rating" style="width: 50px;">
+            <input type="button" id="topic-3-button" onclick="post(3)" value="Post">
+        </div>
+        <div class="topic-4">
+            <h3>Hoe was de projectweek?</h3>
+            <ul id="topic-4-comments">
+            </ul>
+            <input id="topic-4-name" type="text" placeholder="Name" style="width: 100px">
+            <input id="topic-4-post" type="text" placeholder="Text">
+            <input id="topic-4-rating" type="number" placeholder="Rating" style="width: 50px;">
+            <input type="button" id="topic-4-button" onclick="post(4)" value="Post">
+        </div>
+        <div class="topic-5">
+            <h3>Hoe was de projectweek?</h3>
+            <ul id="topic-5-comments">
+            </ul>
+            <input id="topic-5-name" type="text" placeholder="Name" style="width: 100px">
+            <input id="topic-5-post" type="text" placeholder="Text">
+            <input id="topic-5-rating" type="number" placeholder="Rating" style="width: 50px;">
+            <input type="button" id="topic-5-button" onclick="post(5)" value="Post">
+        </div>
     </div>
 </main>
 <script src="js/comment.js" type="text/javascript"></script>

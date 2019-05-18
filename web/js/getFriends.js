@@ -23,6 +23,9 @@ function showData(){
 document.getElementById("friendsList").addEventListener("click", function(e){
     console.log(e.target.nodeName);
     if(e.target.nodeName == "TD" && e.target){
-        showChat(e.target.id);
+        console.log(e.target.id);
+        if(e.target.id !== "") {
+            showChat(e.target.id);
+        }
     }
 });

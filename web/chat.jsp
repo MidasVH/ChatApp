@@ -31,7 +31,7 @@
                 </table>
 
 
-
+                <!-- Chat div -->
                 <div id="chat" style="bottom: 0; right: 200px; position: absolute; width: auto;  height: 300px; overflow: auto ">
 
                 </div>
