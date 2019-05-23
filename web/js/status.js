@@ -29,4 +29,5 @@ function getData() {
             document.getElementById("status").innerText = status ;
         }
     }
+    setTimeout(getNewStatus, 2000);
 }

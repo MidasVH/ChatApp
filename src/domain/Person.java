@@ -7,6 +7,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -22,6 +23,8 @@ public class Person {
 	private String lastName;
 	private Role role;
 	private String status;
+	private Gender gender;
+	private LocalDate birthday;
 	@JsonIgnore
 	private Set<Person> friends = new HashSet<>();
 
@@ -55,6 +58,25 @@ public class Person {
 	}
 
 	public Person() {
+	}
+
+	public void setBirthday(LocalDate birthday) {
+		if(birthday.isAfter(LocalDate.now())){
+			throw new DomainException("This is not a valid birtday");
+		}
+		this.birthday = birthday;
+	}
+
+	public LocalDate getBirthday(){
+		return birthday;
+	}
+
+	public void setGender(Gender gender){
+		this.gender = gender;
+	}
+
+	public Gender getGender() {
+		return gender;
 	}
 
 	public String getStatus() {
@@ -185,5 +207,4 @@ public class Person {
 		}
 		this.lastName = lastName;
 	}
-
 }

@@ -13,6 +13,14 @@
                     <li><a href="Controller">Home</a></li>
                 </c:otherwise>
             </c:choose>
+            <c:choose>
+                <c:when test="${param.title=='Add User'}">
+                    <li  id="actual"><a href="Controller?action=toAddUser">Add User</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="Controller?action=toAddUser">Add User</a></li>
+                </c:otherwise>
+            </c:choose>
             <c:if test="${user != null}">
                 <c:choose>
                     <c:when test="${param.title == 'Chat'}">
