@@ -12,6 +12,7 @@ public class getStatus extends AsyncRequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Controller.setAllowSendJson();
         Person p = (Person)request.getSession().getAttribute("user");
+        System.out.println(p.getStatus());
         if(p.getStatus() != null){
             return toJSON(p.getStatus());
         }else{

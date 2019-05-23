@@ -1,6 +1,7 @@
 var statusButton = document.getElementById("statusButton");
 statusButton.onclick = changeStatus;
 
+
 var getStatusRequest = new XMLHttpRequest();
 var newStatusRequest = new XMLHttpRequest();
 
@@ -23,7 +24,6 @@ function getNewStatus() {
 function getData() {
     if(getStatusRequest.status == 200){
         if(getStatusRequest.readyState == 4){
-            console.log(getStatusRequest.responseText);
             var statusResponse = JSON.parse(getStatusRequest.responseText);
             var status = statusResponse.status;
             document.getElementById("status").innerText = status ;

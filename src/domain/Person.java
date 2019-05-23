@@ -80,7 +80,13 @@ public class Person {
 	}
 
 	public String getStatus() {
-		return this.status;
+
+		if(status == null){
+			return "offline";
+		}
+		else{
+			return status;
+		}
 	}
 
 	public void setStatus(String status){

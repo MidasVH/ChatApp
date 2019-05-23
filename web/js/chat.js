@@ -1,5 +1,7 @@
 var current = "";
 
+
+
 function showChat(id){
     current = id;
     setInterval(getChat, 500);

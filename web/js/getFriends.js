@@ -1,5 +1,7 @@
 var getFriendRequest = new XMLHttpRequest();
 
+
+
 function getFriends(){
     getFriendRequest.open("GET", "Controller?action=getFriends", true);
     getFriendRequest.onreadystatechange = showData;
@@ -21,7 +23,6 @@ function showData(){
 }
 
 document.getElementById("friendsList").addEventListener("click", function(e){
-    console.log(e.target.nodeName);
     if(e.target.nodeName == "TD" && e.target){
         console.log(e.target.id);
         if(e.target.id !== "") {
